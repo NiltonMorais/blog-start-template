@@ -1,6 +1,6 @@
 # Teste prático
 
-Esse teste prático visa avaliar os conhecimentos do candidato a vaga de programador PHP.
+Esse teste prático visa avaliar os conhecimentos do candidato a vaga de programador PHP 100% Remoto.
 
 ## Objetivos
   - Conhecer um pouco de suas habilidades em:
