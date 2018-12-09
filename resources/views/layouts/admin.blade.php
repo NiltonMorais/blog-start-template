@@ -44,6 +44,13 @@
         </div>
     </nav>
     <div class="container">
+        <nav class="mt-2" aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
+            </ol>
+        </nav>
+
         <h1>@yield('title')</h1>
         @yield('content')
     </div>
