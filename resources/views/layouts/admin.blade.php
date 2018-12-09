@@ -23,13 +23,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('admin.index') }}">Home <span class="sr-only">(current)</span></a>
+                <li class="{{'nav-item '.active('admin.index')}}">
+                    <a class="nav-link" href="{{ route('admin.index') }}">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="{{'nav-item '.active('admin.posts.index')}}">
                     <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
                 </li>
-                <li class="nav-item">
+                <li class="{{'nav-item '.active('admin.categories.index')}}">
                     <a class="nav-link" href="{{ route('admin.categories.index') }}">Categorias</a>
                 </li>
                 <li class="nav-item dropdown">
