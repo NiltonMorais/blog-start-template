@@ -26,17 +26,25 @@ Route::group([
     })->name('index');
 
     Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
-        Route::get('', ['as' => 'index', 'uses' => "CategoryController@index"]);
-        Route::get('create', ['as' => 'create', 'uses' => "CategoryController@create"]);
-        Route::post('store', ['as' => 'store', 'uses' => "CategoryController@store"]);
-        Route::get('show/{category}', ['as' => 'show', 'uses' => "CategoryController@show"]);
-        Route::get('edit/{category}', ['as' => 'edit', 'uses' => "CategoryController@edit"]);
-        Route::put('update/{category}', ['as' => 'update', 'uses' => "CategoryController@update"]);
-        Route::get('destroy/{category}', ['as' => 'destroy', 'uses' => "CategoryController@destroy"]);
+        Route::get('', 'CategoryController@index')->name('index');
+        Route::get('create', 'CategoryController@create')->name('create');
+        Route::post('store', 'CategoryController@store')->name('store');
+        Route::get('show/{category}', 'CategoryController@show')->name('show');
+        Route::get('edit/{category}', 'CategoryController@edit')->name('edit');
+        Route::put('update/{category}', 'CategoryController@update')->name('update');
+        Route::get('destroy/{category}', 'CategoryController@destroy')->name('destroy');
     });
 
-    Route::resource('posts', 'PostController');
-    //Route::resource('categories', 'CategoryController');
+    Route::group(['prefix' => 'posts', 'as' => 'posts.'], function () {
+        Route::get('', 'PostController@index')->name('index');
+        Route::get('create', 'PostController@create')->name('create');
+        Route::post('store', 'PostController@store')->name('store');
+        Route::get('show/{post}', 'PostController@show')->name('show');
+        Route::get('edit/{post}', 'PostController@edit')->name('edit');
+        Route::put('update/{post}', 'PostController@update')->name('update');
+        Route::get('destroy/{post}', 'PostController@destroy')->name('destroy');
+    });
+
 });
 
 Auth::routes();
