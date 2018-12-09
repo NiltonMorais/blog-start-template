@@ -16,9 +16,10 @@ Route::get('/', function () {
 });
 
 Route::group([
+    'namespace' => 'Admin\\',
     'prefix'=>'admin',
     'as'=>'admin.',
-    'namespace' => 'Admin\\'
+    'middleware' => ['auth']
 ], function(){
     Route::get('', function(){
         return view('admin.index');
@@ -27,3 +28,7 @@ Route::group([
     Route::resource('posts', 'PostController');
     Route::resource('categories', 'CategoryController');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
