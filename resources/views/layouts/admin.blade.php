@@ -57,7 +57,7 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="container clearfix mb-5">
         <nav class="mt-2" aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-end">
                 <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
@@ -74,6 +74,9 @@
         <h1>@yield('title')</h1>
         @yield('content')
     </div>
+    <footer class="bg-dark p-2 text-center fixed-bottom">
+        <a href="https://github.com/NiltonMorais">Developed by @Nilton Morais</a>
+    </footer>
 </div>
 
 <!-- Scripts -->
