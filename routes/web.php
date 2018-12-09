@@ -23,4 +23,6 @@ Route::group([
     Route::get('', function(){
         return view('admin.index');
     })->name('index');
+
+    Route::resource('posts', 'PostController');
 });

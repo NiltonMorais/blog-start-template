@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', 'Home')
 @section('content')
-    <h1>Home</h1>
+    <p>Página Home</p>
 @endsection

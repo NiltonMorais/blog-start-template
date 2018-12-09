@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Blog') }}</title>
+    <title>@yield('title') | Admin {{ config("app.name") }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,10 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('admin.index') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Posts</a>
+                    <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Categorias</a>
@@ -44,6 +44,7 @@
         </div>
     </nav>
     <div class="container">
+        <h1>@yield('title')</h1>
         @yield('content')
     </div>
 </div>
