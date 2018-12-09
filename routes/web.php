@@ -25,8 +25,18 @@ Route::group([
         return view('admin.index');
     })->name('index');
 
+    Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+        Route::get('', ['as' => 'index', 'uses' => "CategoryController@index"]);
+        Route::get('create', ['as' => 'create', 'uses' => "CategoryController@create"]);
+        Route::post('store', ['as' => 'store', 'uses' => "CategoryController@store"]);
+        Route::get('show/{category}', ['as' => 'show', 'uses' => "CategoryController@show"]);
+        Route::get('edit/{category}', ['as' => 'edit', 'uses' => "CategoryController@edit"]);
+        Route::put('update/{category}', ['as' => 'update', 'uses' => "CategoryController@update"]);
+        Route::get('destroy/{category}', ['as' => 'destroy', 'uses' => "CategoryController@destroy"]);
+    });
+
     Route::resource('posts', 'PostController');
-    Route::resource('categories', 'CategoryController');
+    //Route::resource('categories', 'CategoryController');
 });
 
 Auth::routes();

@@ -10,6 +10,7 @@
             <th scope="col">#</th>
             <th scope="col">Título</th>
             <th scope="col">Descrição</th>
+            <th scope="col">Status</th>
             <th scope="col">Ação</th>
         </tr>
         </thead>
@@ -19,7 +20,18 @@
                     <th scope="row">{{ $category->id }}</th>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
-                    <td></td>
+                    <td>{{ $category->active ? 'Ativo' : 'Inativo' }}</td>
+                    <td>
+                        <a href="{{route('admin.categories.edit', $category->id)}}" class="btn btn-sm btn-link" title="Editar">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{route('admin.categories.show', $category->id)}}" class="btn btn-sm btn-link" title="Visualizar">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="{{route('admin.categories.destroy', $category->id)}}" class="btn btn-sm btn-link text-danger" title="Remover">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

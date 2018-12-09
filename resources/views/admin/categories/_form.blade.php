@@ -8,5 +8,5 @@
 </div>
 <div class="form-group">
     {!! Form::label('active', 'Ativo: ') !!}
-    {!! Form::checkbox('active', null, ['class'=>'form-control']) !!}
+    {!! Form::checkbox('active', true, null) !!}
 </div>
