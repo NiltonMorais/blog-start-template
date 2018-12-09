@@ -4,7 +4,7 @@
     <a href="{{ route('admin.categories.create') }}" class="btn btn-success float-right mb-2">
         <i class="fas fa-plus"></i> Novo
     </a>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -20,7 +20,13 @@
                     <th scope="row">{{ $category->id }}</th>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
-                    <td>{{ $category->active ? 'Ativo' : 'Inativo' }}</td>
+                    <td>
+                        {!!
+                            $category->active ?
+                                "<span class='badge badge-success'>Ativo</span>" :
+                                "<span class='badge badge-warning'>Inativo</span>"
+                        !!}
+                    </td>
                     <td>
                         <a href="{{route('admin.categories.edit', $category->id)}}" class="btn btn-sm btn-link" title="Editar">
                             <i class="fas fa-edit"></i>

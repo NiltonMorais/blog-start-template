@@ -3,11 +3,17 @@
 @section('content')
     <div class="card">
         <div class="card-body bg-secondary text-white">
-            <h5 class="card-title">{ $category->name }}</h5>
+            <h5 class="card-title">{{ $category->name }}</h5>
             <p class="card-text">{{ $category->description }}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Status:</b> {{ $category->active ? 'Ativo' : 'Inativo' }}</li>
+            <li class="list-group-item"><b>Status:</b>
+                {!!
+                    $category->active ?
+                        "<span class='badge badge-success'>Ativo</span>" :
+                        "<span class='badge badge-warning'>Inativo</span>"
+                !!}
+            </li>
             <li class="list-group-item"><b>Slug:</b> {{ $category->slug }}</li>
             <li class="list-group-item"><b>Data de Criação:</b> {{ $category->created_at->format('d/m/Y - H:i:s') }}</li>
             <li class="list-group-item"><b>Data de Atualização:</b> {{ $category->updated_at->format('d/m/Y - H:i:s') }}</li>
