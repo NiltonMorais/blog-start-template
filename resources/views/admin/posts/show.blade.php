@@ -10,6 +10,7 @@
             {!! $post->content !!}
         </div>
         <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Categoria:</b> {{ $post->categoriesList }}</li>
             <li class="list-group-item"><b>Status:</b>
                 {!!
                     $post->active ?
@@ -22,7 +23,7 @@
             <li class="list-group-item"><b>Data de Atualização:</b> {{ $post->updated_at->format('d/m/Y - H:i:s') }}</li>
         </ul>
         <div class="card-body">
-            <a href="{{route('admin.posts.edit', $post->slug)}}" class="card-link">
+            <a href="{{route('admin.posts.edit', $post->id)}}" class="card-link">
                 <i class="fas fa-edit"></i> Editar
             </a>
             <a href="{{route('admin.posts.destroy', $post->slug)}}" class="card-link text-danger">

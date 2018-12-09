@@ -11,6 +11,10 @@
     {!! Form::textarea('content', null, ['class'=>'form-control']) !!}
 </div>
 <div class="form-group">
+    {!! Form::label('categories[]', 'Categoria: ') !!}
+    {!! Form::select('categories[]', $categories, null, ['class' => 'custom-select', 'multiple'=>'multiple', 'size'=>'10']); !!}
+</div>
+<div class="form-group">
     {!! Form::label('active', 'Ativo: ') !!}
     {!! Form::checkbox('active', true, null) !!}
 </div>

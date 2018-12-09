@@ -17,6 +17,8 @@ class PostRequest extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'content' => 'required',
+            'categories' => 'array',
+            'categories.*' => 'exists:categories,id',
             'cover_photo' => 'image',
         ];
     }

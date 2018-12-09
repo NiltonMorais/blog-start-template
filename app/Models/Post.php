@@ -18,4 +18,14 @@ class Post extends Model
             ]
         ];
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function getCategoriesListAttribute()
+    {
+        return $this->categories->implode('name',', ');
+    }
 }
