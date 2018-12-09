@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Visualizar')
+@section('title', 'Visualizar Publicação')
 @section('content')
     <div class="card">
         <div class="card-body bg-secondary text-white">
