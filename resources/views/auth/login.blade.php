@@ -14,7 +14,7 @@
                             <h4>Utilize as seguintes credenciais:</h4>
                             <ul class="list-group">
                                 <li class="list-group-item">User: admin@user.com</li>
-                                <li class="list-group-item">Password: 123456</li>
+                                <li class="list-group-item">Password: secret</li>
                             </ul>
                         </div>
                         <div class="form-group row mt-4">
