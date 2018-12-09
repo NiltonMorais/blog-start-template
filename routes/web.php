@@ -25,4 +25,5 @@ Route::group([
     })->name('index');
 
     Route::resource('posts', 'PostController');
+    Route::resource('categories', 'CategoryController');
 });
