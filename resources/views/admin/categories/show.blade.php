@@ -19,10 +19,10 @@
             <li class="list-group-item"><b>Data de Atualização:</b> {{ $category->updated_at->format('d/m/Y - H:i:s') }}</li>
         </ul>
         <div class="card-body">
-            <a href="{{route('admin.categories.edit', $category->id)}}" class="card-link">
+            <a href="{{route('admin.categories.edit', $category->slug)}}" class="card-link">
                 <i class="fas fa-edit"></i> Editar
             </a>
-            <a href="{{route('admin.categories.destroy', $category->id)}}" class="card-link text-danger">
+            <a href="{{route('admin.categories.destroy', $category->slug)}}" class="card-link text-danger">
                 <i class="fas fa-trash-alt"></i>
                 Excluir</a>
             <a href="{{route('admin.categories.index')}}" class="card-link">Voltar</a>

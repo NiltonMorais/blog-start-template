@@ -22,10 +22,10 @@
             <li class="list-group-item"><b>Data de Atualização:</b> {{ $post->updated_at->format('d/m/Y - H:i:s') }}</li>
         </ul>
         <div class="card-body">
-            <a href="{{route('admin.posts.edit', $post->id)}}" class="card-link">
+            <a href="{{route('admin.posts.edit', $post->slug)}}" class="card-link">
                 <i class="fas fa-edit"></i> Editar
             </a>
-            <a href="{{route('admin.posts.destroy', $post->id)}}" class="card-link text-danger">
+            <a href="{{route('admin.posts.destroy', $post->slug)}}" class="card-link text-danger">
                 <i class="fas fa-trash-alt"></i>
                 Excluir</a>
             <a href="{{route('admin.posts.index')}}" class="card-link">Voltar</a>

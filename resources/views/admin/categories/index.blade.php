@@ -28,13 +28,13 @@
                         !!}
                     </td>
                     <td>
-                        <a href="{{route('admin.categories.edit', $category->id)}}" class="btn btn-sm btn-link" title="Editar">
+                        <a href="{{route('admin.categories.edit', $category->slug)}}" class="btn btn-sm btn-link" title="Editar">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="{{route('admin.categories.show', $category->id)}}" class="btn btn-sm btn-link" title="Visualizar">
+                        <a href="{{route('admin.categories.show', $category->slug)}}" class="btn btn-sm btn-link" title="Visualizar">
                             <i class="fas fa-eye"></i>
                         </a>
-                        <a href="{{route('admin.categories.destroy', $category->id)}}" class="btn btn-sm btn-link text-danger" title="Remover">
+                        <a href="{{route('admin.categories.destroy', $category->slug)}}" class="btn btn-sm btn-link text-danger" title="Remover">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </td>
