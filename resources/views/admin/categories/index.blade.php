@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 @section('title', 'Categorias')
 @section('content')
+    <a href="{{ route('admin.categories.create') }}" class="btn btn-success float-right mb-2">
+        <i class="fas fa-plus"></i> Novo
+    </a>
     <table class="table">
         <thead>
         <tr>

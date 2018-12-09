@@ -11,6 +11,7 @@
     <title>@yield('title') | Admin {{ config("app.name") }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
@@ -27,10 +28,10 @@
                 <li class="{{'nav-item '.active('admin.index')}}">
                     <a class="nav-link" href="{{ route('admin.index') }}">Home</a>
                 </li>
-                <li class="{{'nav-item '.active('admin.posts.index')}}">
+                <li class="{{'nav-item '.active('admin.posts.*')}}">
                     <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
                 </li>
-                <li class="{{'nav-item '.active('admin.categories.index')}}">
+                <li class="{{'nav-item '.active('admin.categories.*')}}">
                     <a class="nav-link" href="{{ route('admin.categories.index') }}">Categorias</a>
                 </li>
             </ul>
@@ -60,6 +61,12 @@
         <nav class="mt-2" aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-end">
                 <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
+                @if (is_active('admin.posts.*'))
+                    <li class="breadcrumb-item"><a href="{{route('admin.posts.index')}}">Post</a></li>
+                @endif
+                @if (is_active('admin.categories.*'))
+                    <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Categoria</a></li>
+                @endif
                 <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
             </ol>
         </nav>
