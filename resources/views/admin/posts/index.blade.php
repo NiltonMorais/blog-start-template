@@ -1,9 +1,12 @@
 @extends('layouts.admin')
 @section('title', 'Posts')
 @section('content')
-    <a href="{{ route('admin.posts.create') }}" class="btn btn-success float-right mb-2">
+    <a href="{{ route('admin.posts.create') }}" class="btn btn-success float-left mb-2">
         <i class="fas fa-plus"></i> Novo
     </a>
+
+    @include('admin._search-field')
+
     <table class="table table-striped">
         <thead>
         <tr>

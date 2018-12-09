@@ -6,12 +6,20 @@ use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::orderBy('id','desc')->paginate('10');
+        if($request->get('search')){
+            $posts = Post::where('title','like','%'.$request->get('search').'%')
+                ->orderBy('id','desc')
+                ->paginate('10');
+        }else{
+            $posts = Post::orderBy('id','desc')
+                ->paginate('10');
+        }
         return view('admin.posts.index', compact('posts'));
     }
 

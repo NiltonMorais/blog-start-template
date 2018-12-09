@@ -71,7 +71,7 @@
             </ol>
         </nav>
 
-        <h1>@yield('title')</h1>
+        <h1 class="mb-4">@yield('title')</h1>
         @yield('content')
     </div>
     <footer class="bg-dark p-2 text-center fixed-bottom">

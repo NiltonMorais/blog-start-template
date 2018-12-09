@@ -7,6 +7,7 @@
         @include('admin.posts._form')
         <div class="form-group">
             {!! Form::submit("Criar publicação", ['class'=>'btn btn-primary']) !!}
+            <a href="{{route('admin.posts.index')}}" class="btn btn-link">Voltar</a>
         </div>
     {!! Form::close() !!}
 

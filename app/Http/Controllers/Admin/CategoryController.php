@@ -5,12 +5,21 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::orderBy('id','desc')->paginate('10');
+        if($request->get('search')){
+            $categories = Category::where('name','like','%'.$request->get('search').'%')
+                ->orderBy('id','desc')
+                ->paginate('10');
+        }else{
+            $categories = Category::orderBy('id','desc')
+                ->paginate('10');
+        }
+
         return view('admin.categories.index', compact('categories'));
     }
 
