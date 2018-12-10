@@ -3,7 +3,7 @@
 @section('content')
     @include('errors._check')
 
-    {!! Form::open(['route'=>'admin.posts.store']) !!}
+    {!! Form::open(['route'=>'admin.posts.store', 'files'=>true]) !!}
         @include('admin.posts._form')
         <div class="form-group">
             {!! Form::submit("Criar publicação", ['class'=>'btn btn-primary']) !!}

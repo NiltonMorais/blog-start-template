@@ -11,6 +11,7 @@
         <thead>
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Capa</th>
             <th scope="col">Título</th>
             <th scope="col">Descrição</th>
             <th scope="col">Categoria</th>
@@ -22,6 +23,11 @@
         @foreach($posts as $post)
             <tr>
                 <th scope="row">{{ $post->id }}</th>
+                <td>
+                    @if($post->cover_photo)
+                        <img src="{{$post->photo_url}}" height="50px" alt="foto da capa" />
+                    @endif
+                </td>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->description }}</td>
                 <td>{{ $post->categoriesList }}</td>

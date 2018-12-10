@@ -3,7 +3,7 @@
 @section('content')
     @include('errors._check')
 
-    {!! Form::model($post, ['route'=>['admin.posts.update', $post->id],'method'=>'PUT']) !!}
+    {!! Form::model($post, ['route'=>['admin.posts.update', $post->id],'method'=>'PUT','files'=>true]) !!}
         @include('admin.posts._form')
         <div class="form-group">
             {!! Form::submit("Salvar publicação", ['class'=>'btn btn-primary']) !!}

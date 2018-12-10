@@ -19,7 +19,7 @@ class PostRequest extends FormRequest
             'content' => 'required',
             'categories' => 'array',
             'categories.*' => 'exists:categories,id',
-            'cover_photo' => 'image',
+            'cover' => 'image',
         ];
     }
 }

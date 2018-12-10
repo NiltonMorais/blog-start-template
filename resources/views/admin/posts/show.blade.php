@@ -2,6 +2,9 @@
 @section('title', 'Visualizar Publicação')
 @section('content')
     <div class="card">
+        @if($post->cover_photo)
+            <img class="card-img-top" src="{{$post->photo_url}}" alt="foto da capa" />
+        @endif
         <div class="card-body bg-secondary text-white">
             <h5 class="card-title">{{ $post->title }}</h5>
             <p class="card-text">{{ $post->description }}</p>

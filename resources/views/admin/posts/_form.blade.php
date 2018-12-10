@@ -10,6 +10,10 @@
     {!! Form::text('description', null, ['class'=>'form-control','required'=>'required']) !!}
 </div>
 <div class="form-group">
+    {!! Form::label('cover', 'Foto da capa: ') !!}
+    {!! Form::file('cover', ['class'=>'form-control']) !!}
+</div>
+<div class="form-group">
     {!! Form::label('categories[]', 'Categoria: ') !!}
     {!! Form::select('categories[]', $categories, null, ['class' => 'custom-select', 'multiple'=>'multiple', 'size'=>'10']); !!}
 </div>

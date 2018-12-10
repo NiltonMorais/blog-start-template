@@ -33,7 +33,10 @@ class PostController extends Controller
     {
         $data = $request->all();
         $data['active'] = $request->get('active') ? true : false;
-        $post = Post::create($data);
+        $post = $request->file('cover') ?
+            Post::createWithPhotoFile($data, $request->file('cover')) :
+            Post::create($data);
+
         $post->categories()->sync($request->get('categories'));
         return redirect()->route('admin.posts.index');
 
@@ -54,6 +57,13 @@ class PostController extends Controller
     {
         $data = $request->all();
         $data['active'] = $request->get('active') ? true : false;
+
+        if($request->file('cover')){
+            $post->updateWithPhoto($data, $request->file('cover'));
+        }else{
+            $post->update($data);
+        }
+
         $post->update($data);
         $post->categories()->sync($request->get('categories'));
         return redirect()->route('admin.posts.index');
@@ -61,7 +71,7 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        $post->delete();
+        $post->deleteWithPhoto();
         return redirect()->route('admin.posts.index');
     }
 }
