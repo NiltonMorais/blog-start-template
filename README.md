@@ -7,6 +7,8 @@
     - composer install
   - Rodar migrations e seeds:
     - php artisan migrate:refresh --seed
+  - Criar link simbólico para a pasta storage na pasta public:
+    - php artisan storage:link
   - Rodar servidor php:
     - php artisan serve
   - Abrir rota /admin:
