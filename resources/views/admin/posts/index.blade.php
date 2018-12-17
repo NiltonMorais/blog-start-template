@@ -45,7 +45,7 @@
                     <a href="{{route('admin.posts.show', $post->slug)}}" class="btn btn-sm btn-link" title="Visualizar">
                         <i class="fas fa-eye"></i>
                     </a>
-                    <a href="{{route('admin.posts.destroy', $post->slug)}}" class="btn btn-sm btn-link text-danger" title="Remover">
+                    <a href="{{route('admin.posts.destroy', $post->id)}}" class="btn btn-sm btn-link text-danger" title="Remover">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 </td>
