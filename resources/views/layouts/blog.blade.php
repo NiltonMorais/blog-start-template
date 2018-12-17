@@ -28,7 +28,7 @@
                 <h3 class="mt-4">Categorias</h3>
                 <div class="list-group">
                     @foreach(\App\Models\Category::all() as $category)
-                        <a href="#" class="list-group-item list-group-item-action">{{ $category->name }}</a>
+                        <a href="{{ route('category',$category->slug) }}" class="{{'list-group-item list-group-item-action '.active(route('category', $category->slug))}}">{{ $category->name }}</a>
                     @endforeach
                 </div>
             </div>

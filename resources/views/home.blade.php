@@ -21,7 +21,9 @@
                 {!! $post->content !!}
             </div>
             <div class="card-body py-0 text-primary">
-                <p class="float-left">{{ $post->categoriesList }}</p>
+                @foreach($post->categories as $category)
+                    <a href="{{ route('category', $category->slug) }}" class="badge badge-light">{{$category->name}}</a>
+                @endforeach
                 <p class="float-right">{{ $post->created_at->format('d/m/Y - H:i:s') }}</p>
             </div>
         </div>
