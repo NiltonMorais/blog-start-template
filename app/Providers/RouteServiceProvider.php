@@ -31,14 +31,22 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::bind('category', function($value){
+            if(is_numeric($value)){
+                return Category::find($value);
+            }
+
             /* @var Collection $collection */
-            $collection = Category::whereId($value)->orWhere('slug',$value)->get();
+            $collection = Category::where('slug',$value)->get();
             return $collection->first();
         });
 
         Route::bind('post', function($value){
+            if(is_numeric($value)){
+                return Post::find($value);
+            }
+
             /* @var Collection $collection */
-            $collection = Post::whereId($value)->orWhere('slug',$value)->get();
+            $collection = Post::where('slug',$value)->get();
             return $collection->first();
         });
     }
