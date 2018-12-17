@@ -1,5 +1,4 @@
-## DEMO
-[DEMO](https://blog-start-template.herokuapp.com)
+[DEMO](http://blog-start-template.herokuapp.com)
 
 ## Instalação
   - Criar arquivo .env a partir da cópia do .env.example:
