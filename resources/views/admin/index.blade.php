@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Home')
+@section('title', 'Dashboard')
 @section('content')
-    <p>Página Home</p>
+    <p>Página Dashboard</p>
 @endsection
