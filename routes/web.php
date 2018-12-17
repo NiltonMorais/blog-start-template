@@ -2,6 +2,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/category/{category}', 'HomeController@category')->name('category');
+Route::get('/post/{post}', 'HomeController@post')->name('post');
 
 Route::group([
     'namespace' => 'Admin\\',

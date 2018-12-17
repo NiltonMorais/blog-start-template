@@ -1,14 +1,7 @@
 @extends('layouts.blog')
-@section('title', 'Home')
+@section('title', $post->title)
 @section('content')
-
-    <div class="mt-3 w-100">
-        <form class="my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar.." aria-label="Search" name="search">
-        </form>
-    </div>
-
-    @foreach($posts as $post)
+        <h1 class="mt-5">{{$post->title}}</h1>
         <div class="card mt-3 mb-5 shadow">
             @if($post->cover_photo)
                 <img class="card-img-top" src="{{$post->photo_url}}" alt="foto da capa" />
@@ -29,10 +22,5 @@
                 <p class="float-right">{{ $post->created_at->format('d/m/Y - H:i:s') }}</p>
             </div>
         </div>
-    @endforeach
-
-    <div class="float-right mt-3">
-        {!! $posts->links() !!}
-    </div>
 
 @endsection

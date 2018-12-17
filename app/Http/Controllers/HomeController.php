@@ -25,6 +25,11 @@ class HomeController extends Controller
         return view('home', compact('posts'));
     }
 
+    public function post(Post $post)
+    {
+        return view('post', compact('post'));
+    }
+
     public function category(Request $request, Category $category)
     {
         if($request->get('search')){
